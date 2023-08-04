@@ -26,17 +26,27 @@ public class PlayerCamera : MonoBehaviour
     [SerializeField]
     private float zoomFov;
 
-    [Header("Lerp")]
+    [Header("Crouching")]
     [SerializeField]
-    private float beginValue;
+    private float crouchHeight;
     [SerializeField]
-    private float endValue;
+    private float standHeight;
+
+    [Header("Crouch")]
     [SerializeField]
-    private float lerpDuration;
+    private float crouchDuration;
+    private float beginCrouchValue;
+    private float endCrouchValue;
+    private float crouchElapsedTime;
+    private bool isCrouching;
+
+    [Header("Lerp FOV")]
     [SerializeField]
-    private float lerpElapedTime;
-    [SerializeField]
-    private bool isLerp;
+    private float zoomDuration;
+    private float beginZoomValue;
+    private float endZoomValue;
+    private float zoomElapsedTime;
+    private bool isZooming;
 
     private float rotationX;
     private float rotationY;
@@ -54,13 +64,14 @@ public class PlayerCamera : MonoBehaviour
 
         this.ComputeInput();
         this.LerpFOV();
+        this.LerpCrouch();
     }
 
     private void ComputeInput()
     {
         if(Input.GetMouseButtonDown(1))
         {
-            this.isLerp = true;
+            this.isZooming = true;
             if(this.camera.fieldOfView == zoomFov)
             {
                 this.UnzoomCamera();
@@ -69,6 +80,20 @@ public class PlayerCamera : MonoBehaviour
             else
             {
                 this.ZoomCamera();
+            }
+        }
+
+        if(Input.GetKeyDown(KeyCode.LeftControl))
+        {
+            this.isCrouching = true;
+            if(this.playerCamHolder.transform.position.y == this.standHeight)
+            {
+                this.Crouch();
+            }
+
+            else
+            {
+                this.Stand();
             }
         }
     }
@@ -94,31 +119,53 @@ public class PlayerCamera : MonoBehaviour
 
     private void ZoomCamera()
     {
-        this.beginValue = this.normalFov;
-        this.endValue = this.zoomFov;
-        this.lerpElapedTime = 0;
+        this.beginZoomValue = this.normalFov;
+        this.endZoomValue = this.zoomFov;
+        this.zoomElapsedTime = 0;
     }
 
     private void UnzoomCamera()
     {
-        this.beginValue = this.zoomFov;
-        this.endValue = this.normalFov;
-        this.lerpElapedTime = 0;
+        this.beginZoomValue = this.zoomFov;
+        this.endZoomValue = this.normalFov;
+        this.zoomElapsedTime = 0;
+    }
+
+    private void Crouch()
+    {
+        this.beginCrouchValue = this.standHeight;
+        this.endCrouchValue = this.crouchHeight;
+        this.crouchElapsedTime = 0;
+    }
+
+    private void Stand()
+    {
+        this.beginCrouchValue = this.crouchHeight;
+        this.endCrouchValue = this.standHeight;
+        this.crouchElapsedTime = 0;
     }
 
     private void LerpFOV()
     {
-        if(!this.isLerp) return;
+        if(!this.isZooming) return ;
 
+        this.zoomElapsedTime += Time.deltaTime;
         var fov = this.camera.fieldOfView;
-        
-        this.lerpElapedTime += Time.deltaTime;
-        var percentage = this.lerpElapedTime / this.lerpDuration;
-        
-        this.camera.fieldOfView = Mathf.Lerp(this.beginValue, this.endValue, percentage);
-        if(percentage >= 1)
-        {
-            this.isLerp = false;
-        }
+        var percentage = this.zoomElapsedTime / this.zoomDuration;
+
+        this.camera.fieldOfView = Mathf.Lerp(this.beginZoomValue, this.endZoomValue, percentage);
+    }
+
+    private void LerpCrouch()
+    {
+        if(!this.isCrouching) return ;
+
+        this.crouchElapsedTime += Time.deltaTime;
+        var percentage = this.crouchElapsedTime / this.crouchDuration;
+
+        var camHeight = Mathf.Lerp(this.beginCrouchValue, this.endCrouchValue, percentage);
+
+        var camPos = this.playerCamHolder.transform.position;
+        this.playerCamHolder.transform.position = new Vector3(camPos.x, camHeight, camPos.z);
     }
 }
