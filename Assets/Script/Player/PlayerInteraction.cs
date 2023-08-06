@@ -5,7 +5,11 @@ using UnityEngine;
 public class PlayerInteraction : MonoBehaviour
 {
     [SerializeField]
-    private Transform orientation;
+    private Transform orientationXY;
+    [SerializeField]
+    private Transform handTransform;
+    [SerializeField]
+    private Transform camHolder;
 
     [SerializeField]
     private GameObject heldObject;
@@ -36,12 +40,15 @@ public class PlayerInteraction : MonoBehaviour
     [Header("Throw")]
     [SerializeField]
     private float throwForce;
+    [SerializeField]
+    private float throwUpwardForce;
     
 
     void Update()
     {
         this.ComputeInput();
         this.LerpTransform();
+        this.SyncHandRotation();
     }
 
     private void ComputeInput()
@@ -81,17 +88,22 @@ public class PlayerInteraction : MonoBehaviour
     {
         this.heldObject = heldObject;
         this.beginLerpPos = heldObject.transform.position;
-        this.endLerpPos = this.camera.ScreenToWorldPoint(this.camera.ViewportToScreenPoint(new Vector3(0.5f, 0.5f, 0)));
+        this.endLerpPos = this.handTransform.position;
         this.beginRotationValue = heldObject.transform.rotation.eulerAngles;
         this.endRotationValue = Quaternion.identity.eulerAngles;
+        this.interactElapsedTime = 0;
 
         this.heldObject.GetComponent<BoxCollider>().enabled = false;
     }
 
     private void ThrowObject()
     {
+        this.heldObject.transform.parent = null;
+        
         var rb = this.heldObject.GetComponent<Rigidbody>();
-        rb.AddForce(this.orientation.forward * this.throwForce);
+        rb.velocity = Vector3.zero;
+        var force = this.orientationXY.forward * this.throwForce + this.orientationXY.up * this.throwUpwardForce;
+        rb.AddForce(force, ForceMode.Impulse);
 
         this.heldObject.GetComponent<BoxCollider>().enabled = true;
         this.heldObject = null;
@@ -107,12 +119,18 @@ public class PlayerInteraction : MonoBehaviour
         var posValue = Vector3.Lerp(this.beginLerpPos, this.endLerpPos, percentage);
         var rotValue = Vector3.Lerp(this.beginRotationValue, this.endRotationValue, percentage);
 
-        this.heldObject.transform.position = posValue;
-        this.heldObject.transform.rotation = Quaternion.Euler(rotValue);
+        Debug.Log(posValue);
+        this.heldObject.transform.SetPositionAndRotation(posValue, Quaternion.Euler(rotValue));
 
         if(percentage >= 1)
         {
-            this.heldObject.transform.position = this.camera.ScreenToWorldPoint(this.camera.ViewportToScreenPoint(new Vector3(0.5f, 0.5f, 0)));
+            this.heldObject.transform.position = this.handTransform.position;
+            this.heldObject.transform.parent = this.handTransform;
         }
+    }
+
+    private void SyncHandRotation()
+    {
+        this.handTransform.rotation = this.orientationXY.rotation;
     }
 }

@@ -12,7 +12,9 @@ public class PlayerCamera : MonoBehaviour
     [SerializeField]
     private float senseY;
     [SerializeField]
-    private Transform orientation;
+    private Transform orientationY;
+    [SerializeField]
+    private Transform orientationXY;
 
     [Header("Cam pos sync")]
     [SerializeField]
@@ -114,7 +116,8 @@ public class PlayerCamera : MonoBehaviour
         this.rotationX = Mathf.Clamp(this.rotationX, -90f, 90f);
 
         this.transform.rotation = Quaternion.Euler(this.rotationX, this.rotationY, 0);
-        this.orientation.rotation = Quaternion.Euler(0, this.rotationY, 0);
+        this.orientationY.rotation = Quaternion.Euler(0, this.rotationY, 0);
+        this.orientationXY.rotation = Quaternion.Euler(this.rotationX, this.rotationY, 0);
     }
 
     private void ZoomCamera()
