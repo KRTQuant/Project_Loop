@@ -10,9 +10,10 @@ public class PlayerInteraction : MonoBehaviour
     private Transform handTransform;
     [SerializeField]
     private Transform camHolder;
-
     [SerializeField]
     private GameObject heldObject;
+    [SerializeField]
+    private GameObject player;
 
     [SerializeField]
     private Camera camera;
@@ -49,6 +50,7 @@ public class PlayerInteraction : MonoBehaviour
         this.ComputeInput();
         this.LerpTransform();
         this.SyncHandRotation();
+        this.FixHeldObjectRotation();
     }
 
     private void ComputeInput()
@@ -125,12 +127,19 @@ public class PlayerInteraction : MonoBehaviour
         if(percentage >= 1)
         {
             this.heldObject.transform.position = this.handTransform.position;
-            this.heldObject.transform.parent = this.handTransform;
+            //this.heldObject.transform.parent = this.handTransform;
         }
     }
 
     private void SyncHandRotation()
     {
         this.handTransform.rotation = this.orientationXY.rotation;
+    }
+
+    private void FixHeldObjectRotation()
+    {
+        if(this.heldObject == null) return ;
+
+        this.heldObject.transform.LookAt(this.player.transform.position);
     }
 }
