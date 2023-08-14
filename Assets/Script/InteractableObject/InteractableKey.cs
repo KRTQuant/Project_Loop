@@ -9,6 +9,8 @@ public class InteractableKey : MonoBehaviour, IInteractable
     public void Interact()
     {
         this.lockableDoor.Unlock();
+
+        
     }
 
     public bool IsInteractable()
