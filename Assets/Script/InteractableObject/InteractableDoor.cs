@@ -5,17 +5,17 @@ using UniRx;
 
 public class InteractableDoor : MonoBehaviour, IInteractable
 {
-    private ReactiveProperty<bool> IsOpen;
-    private ObjectAnimatorView animatorView;
+    [SerializeField]
+    protected ReactiveProperty<bool> IsOpen;
+    protected ObjectAnimatorView animatorView;
 
-    public void Interact()
+    public virtual void Interact()
     {
         this.IsOpen.Value = !this.IsOpen.Value;
-
         this.animatorView.SetTrigger("Trigger");
     }
 
-    public bool IsInteractable()
+    public virtual bool IsInteractable()
     {
         return true;
     }
