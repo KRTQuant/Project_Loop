@@ -21,6 +21,8 @@ public class PlayerCamera : MonoBehaviour
     private Transform cameraTransform;
     [SerializeField]
     private Transform playerCamHolder;
+    [SerializeField]
+    private Transform camHand;
 
     [Header("Camera FOV")]
     [SerializeField]
@@ -103,6 +105,7 @@ public class PlayerCamera : MonoBehaviour
     private void SyncCameraPos()
     {
         this.cameraTransform.position = this.playerCamHolder.position;
+        this.camHand.position = this.playerCamHolder.position;
     }
 
     private void UpdateCameraRotation()

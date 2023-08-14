@@ -532,6 +532,7 @@ MonoBehaviour:
   orientationXY: {fileID: 333155488}
   cameraTransform: {fileID: 330585546}
   playerCamHolder: {fileID: 496427680}
+  camHand: {fileID: 387604962}
   normalFov: 95
   zoomFov: 35
   crouchHeight: 1
@@ -2379,7 +2380,7 @@ MonoBehaviour:
   handTransform: {fileID: 1040250200}
   camHolder: {fileID: 387604962}
   heldObject: {fileID: 0}
-  player: {fileID: 1040250199}
+  player: {fileID: 2143407070}
   camera: {fileID: 330585545}
   castDistance: 4
   interactableLayer:
