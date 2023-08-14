@@ -3,7 +3,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField]
-    private CharacterController characterController;
+    private Rigidbody characterController;
     [SerializeField]
     private Transform orientation;
 
@@ -32,6 +32,6 @@ public class PlayerMovement : MonoBehaviour
     private void MovePlayer()
     {
         this.direction = orientation.forward * verticalInput + orientation.right * horizontalInput;
-        this.characterController.Move(direction.normalized * this.speed * Time.deltaTime);
+        this.characterController.velocity = direction.normalized * this.speed * Time.deltaTime;
     }
 }
