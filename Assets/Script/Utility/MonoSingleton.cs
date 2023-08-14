@@ -7,7 +7,7 @@ namespace QuantA.Utils
     public abstract class MonoSingleton<T> : MonoBehaviour where T : MonoSingleton<T>
     {
         private static T m_Instance = null;
-        private static T Instance
+        public static T Instance
         {
             get 
             {

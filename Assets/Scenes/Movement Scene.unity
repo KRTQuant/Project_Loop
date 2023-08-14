@@ -790,6 +790,7 @@ GameObject:
   - component: {fileID: 457484506}
   - component: {fileID: 457484505}
   - component: {fileID: 457484509}
+  - component: {fileID: 457484510}
   m_Layer: 6
   m_Name: Cube (2)
   m_TagString: Interactable
@@ -910,6 +911,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &457484510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 457484504}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd1317102bd30a24bbe5eb4204e09397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioName: 
 --- !u!1 &470905024
 GameObject:
   m_ObjectHideFlags: 0
@@ -2268,6 +2282,58 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1760517749}
   m_CullTransparentMesh: 1
+--- !u!1 &1798712913
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1798712914}
+  - component: {fileID: 1798712915}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1798712914
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1798712913}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1977996167}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1798712915
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1798712913}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e22747fae9f7e764b8c52b2405e756f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioDataArray:
+  - name: BGM
+    clip: {fileID: 8300000, guid: 90fba54267504304eabf02878d71afc2, type: 3}
+    source: {fileID: 0}
+    volume: 1
+    pitch: 1
+    isLoop: 1
+  mixer: {fileID: 24300002, guid: 346a202ff22f99647a9a1fc6aa957a52, type: 2}
 --- !u!1 &1976205599
 GameObject:
   m_ObjectHideFlags: 0
@@ -2403,6 +2469,38 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1976205599}
   m_CullTransparentMesh: 1
+--- !u!1 &1977996166
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1977996167}
+  m_Layer: 0
+  m_Name: Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1977996167
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1977996166}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1, z: 2.085}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1798712914}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2024102384
 GameObject:
   m_ObjectHideFlags: 0
@@ -2631,4 +2729,8 @@ SceneRoots:
   - {fileID: 752136149}
   - {fileID: 437702740}
   - {fileID: 2143407077}
+<<<<<<< Updated upstream
   - {fileID: 643615081}
+=======
+  - {fileID: 1977996167}
+>>>>>>> Stashed changes

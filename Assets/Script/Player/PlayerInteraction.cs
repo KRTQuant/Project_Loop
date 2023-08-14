@@ -64,11 +64,12 @@ public class PlayerInteraction : MonoBehaviour
                 {
                     var isCorrectTag = hit.collider.gameObject.CompareTag(this.tag);
                     var interactable = hit.collider.gameObject.GetComponent<IInteractable>();
+                    var baseInteractable = hit.collider.gameObject.GetComponent<BaseInteractableObject>();
                     var hitObject = hit.collider.gameObject;
 
                     if(isCorrectTag)
                     {
-                        if(interactable != null)
+                        if(interactable != null && baseInteractable == null)
                         {
                             interactable.Interact();
                             return ;
@@ -107,6 +108,12 @@ public class PlayerInteraction : MonoBehaviour
         var force = this.orientationXY.forward * this.throwForce + this.orientationXY.up * this.throwUpwardForce;
         rb.AddForce(force, ForceMode.Impulse);
 
+        var baseInteractable = this.heldObject.GetComponent<BaseInteractableObject>(); 
+        if(baseInteractable != null)
+        {
+            baseInteractable.Yeet();
+        }
+        
         this.heldObject.GetComponent<BoxCollider>().enabled = true;
         this.heldObject = null;
     }
