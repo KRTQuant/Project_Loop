@@ -43,11 +43,16 @@ public class PlayerInteraction : MonoBehaviour
     private float throwForce;
     [SerializeField]
     private float throwUpwardForce;
+
+    [Header("Crosshair")]
+    [SerializeField]
+    private GameObject crosshair;
     
 
     void Update()
     {
         this.ComputeInput();
+        this.RaycastForward();
         this.LerpTransform();
         this.SyncHandRotation();
         this.FixHeldObjectRotation();
@@ -69,6 +74,7 @@ public class PlayerInteraction : MonoBehaviour
 
                     if(isCorrectTag)
                     {
+                        this.crosshair.SetActive(true);
                         if(interactable != null && baseInteractable == null)
                         {
                             interactable.Interact();
@@ -82,6 +88,7 @@ public class PlayerInteraction : MonoBehaviour
 
             else
             {
+                this.crosshair.SetActive(false);
                 this.ThrowObject();
             }
         }
@@ -148,5 +155,32 @@ public class PlayerInteraction : MonoBehaviour
         if(this.heldObject == null) return ;
 
         this.heldObject.transform.LookAt(this.player.transform.position);
+    }
+
+    private void RaycastForward()
+    {
+        if(this.heldObject != null)
+        {
+            this.crosshair.SetActive(false);
+        }
+
+        else
+        {
+            Ray ray = this.camera.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
+            if(Physics.Raycast(ray, out RaycastHit hit, this.castDistance, this.interactableLayer))
+            {
+                var isCorrectTag = hit.collider.gameObject.CompareTag(this.tag);
+
+                if(isCorrectTag)
+                {
+                    this.crosshair.SetActive(true);
+                }
+            }
+
+            else
+            {
+                this.crosshair.SetActive(false);
+            }
+        }
     }
 }
