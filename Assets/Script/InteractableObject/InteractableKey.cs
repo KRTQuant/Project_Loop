@@ -7,12 +7,16 @@ public class InteractableKey : MonoBehaviour, IInteractable
 {
     public LockableDoor lockableDoor;
 
-    private AudioManager audioManager => AudioManager.Instance;
+    private AudioManager AudioManager => AudioManager.Instance;
 
     public void Interact()
     {
         this.lockableDoor.Unlock();
-        this.audioManager.Play("Unlock");
+        if(this.AudioManager != null)
+        {
+            Debug.Log("Play Unlock");
+            this.AudioManager.Play("Unlock");
+        }
         Destroy(this.gameObject);
     }
 

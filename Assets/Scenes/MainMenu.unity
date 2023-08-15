@@ -681,7 +681,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Gameplay
+          m_StringArgument: Teleporter Scene
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &716614072
@@ -1228,6 +1228,64 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1242144400}
   m_CullTransparentMesh: 1
+--- !u!1 &1372495598
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1372495600}
+  - component: {fileID: 1372495599}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1372495599
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1372495598}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e22747fae9f7e764b8c52b2405e756f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioDataArray:
+  - name: BGM
+    clip: {fileID: 8300000, guid: d8adcfd5eb6b9ad4aa27a345e0de7321, type: 3}
+    source: {fileID: 0}
+    volume: 1
+    pitch: 1
+    isLoop: 1
+  - name: Unlock
+    clip: {fileID: 8300000, guid: 77483babaeebb404b8351c002e40810b, type: 3}
+    source: {fileID: 0}
+    volume: 1
+    pitch: 1
+    isLoop: 1
+  mixer: {fileID: 0}
+--- !u!4 &1372495600
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1372495598}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.000010848045, y: 1.0258266, z: 0.64365345}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1479111691
 GameObject:
   m_ObjectHideFlags: 0
@@ -1750,3 +1808,4 @@ SceneRoots:
   - {fileID: 2142350228}
   - {fileID: 2037338412}
   - {fileID: 969763858}
+  - {fileID: 1372495600}

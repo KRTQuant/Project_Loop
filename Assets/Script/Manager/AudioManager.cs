@@ -26,7 +26,16 @@ public class AudioManager : MonoSingleton<AudioManager>
     private AudioMixerGroup mixer;
     public void Start()
     {
-        this.Init();
+        foreach (var audio in this.audioDataArray)
+        {
+            audio.source = gameObject.AddComponent<AudioSource>();
+            audio.source.clip = audio.clip;
+
+            audio.source.volume = audio.volume;
+            audio.source.pitch = audio.pitch;
+            audio.source.loop = audio.isLoop;
+        }
+
         this.Play("BGM");
     }
 
@@ -55,21 +64,6 @@ public class AudioManager : MonoSingleton<AudioManager>
     private AudioData GetAudioByName(string name)
     {
         return Array.Find(this.audioDataArray, audioData => audioData.name == name);
-    }
-
-    public override void Init()
-    {
-        base.Init();
-
-        foreach (var audio in this.audioDataArray)
-        {
-            audio.source = gameObject.AddComponent<AudioSource>();
-            audio.source.clip = audio.clip;
-
-            audio.source.volume = audio.volume;
-            audio.source.pitch = audio.pitch;
-            audio.source.loop = audio.isLoop;
-        }
     }
 
     private void EnableMixer(bool enable, AudioSource source)
