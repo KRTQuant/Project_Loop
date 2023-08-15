@@ -22,8 +22,8 @@ public class LastTeleporter : MonoBehaviour
 
     private async UniTask TriggerUI()
     {
-        await UniTask.Delay(delayTime);
         this.overlayUI.SetActive(true);
+        await UniTask.Delay(delayTime);
         this.isTriggered = true;
         this.sceneManager.LoadScene("MainMenu");
     }
