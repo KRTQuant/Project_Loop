@@ -82,6 +82,7 @@ public class PlayerInteraction : MonoBehaviour
                         }
                         
                         this.VacumnObject(hitObject);
+                        baseInteractable.OnPickup();
                     }
                 }
             }
