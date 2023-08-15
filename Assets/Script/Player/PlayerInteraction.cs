@@ -82,7 +82,6 @@ public class PlayerInteraction : MonoBehaviour
                         }
                         
                         this.VacumnObject(hitObject);
-                        baseInteractable.OnPickup();
                     }
                 }
             }
@@ -103,6 +102,12 @@ public class PlayerInteraction : MonoBehaviour
         this.beginRotationValue = heldObject.transform.rotation.eulerAngles;
         this.endRotationValue = Quaternion.identity.eulerAngles;
         this.interactElapsedTime = 0;
+
+        var baseInteractable = this.heldObject.GetComponent<BaseInteractableObject>(); 
+        if(baseInteractable != null)
+        {
+            baseInteractable.OnPickup();
+        }
 
         this.heldObject.GetComponent<Collider>().enabled = false;
     }

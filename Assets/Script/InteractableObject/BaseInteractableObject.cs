@@ -39,5 +39,6 @@ public class BaseInteractableObject : MonoBehaviour, IInteractable
     public void OnPickup()
     {
         this.isYeet = false;
+        this.isAudioPlayed = false;
     }
 }

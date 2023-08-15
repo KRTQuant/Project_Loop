@@ -1,18 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cysharp.Threading.Tasks;
 
 public class InteractableKey : MonoBehaviour, IInteractable
 {
-    [SerializeField]
-    private ObjectAudioView audioView;
-
     public LockableDoor lockableDoor;
+
+    private AudioManager audioManager => AudioManager.Instance;
 
     public void Interact()
     {
         this.lockableDoor.Unlock();
-        this.audioView.Play("Unlock");
+        this.audioManager.Play("Unlock");
         Destroy(this.gameObject);
     }
 
