@@ -7,6 +7,7 @@ public class InteractableDoor : MonoBehaviour, IInteractable
 {
     [SerializeField]
     protected ReactiveProperty<bool> IsOpen;
+    [SerializeField]
     protected ObjectAnimatorView animatorView;
 
     public virtual void Interact()

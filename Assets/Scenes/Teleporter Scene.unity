@@ -53955,7 +53955,6 @@ GameObject:
   - component: {fileID: 1776642754}
   - component: {fileID: 1776642753}
   - component: {fileID: 1776642752}
-  - component: {fileID: 1776642751}
   - component: {fileID: 1776642757}
   m_Layer: 6
   m_Name: FrontDoor
@@ -53964,18 +53963,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1776642751
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1776642750}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e03f9257cc6667f4082439aa77d6f01e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!95 &1776642752
 Animator:
   serializedVersion: 5
@@ -54061,6 +54048,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   IsOpen:
     value: 0
+  animatorView: {fileID: 1776642753}
 --- !u!1 &1793193719
 GameObject:
   m_ObjectHideFlags: 0
@@ -61187,6 +61175,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   IsOpen:
     value: 0
+  animatorView: {fileID: 2090700913}
 --- !u!4 &2090700916
 Transform:
   m_ObjectHideFlags: 0
@@ -62883,6 +62872,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   IsOpen:
     value: 0
+  animatorView: {fileID: 4295852582420136894}
 --- !u!114 &4295852582420136897
 MonoBehaviour:
   m_ObjectHideFlags: 0
