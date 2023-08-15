@@ -9,7 +9,7 @@ public class InteractableKey : MonoBehaviour, IInteractable
     public void Interact()
     {
         this.lockableDoor.Unlock();
-
+        Destroy(this.gameObject);
         
     }
 
