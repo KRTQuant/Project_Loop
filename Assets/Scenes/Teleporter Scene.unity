@@ -61086,7 +61086,6 @@ GameObject:
   - component: {fileID: 2090700914}
   - component: {fileID: 2090700913}
   - component: {fileID: 2090700912}
-  - component: {fileID: 2090700911}
   m_Layer: 6
   m_Name: BathroomDoor (1)
   m_TagString: Interactable
@@ -61094,18 +61093,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2090700911
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2090700910}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e03f9257cc6667f4082439aa77d6f01e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!95 &2090700912
 Animator:
   serializedVersion: 5
@@ -62795,7 +62782,6 @@ GameObject:
   - component: {fileID: 4295852582420136895}
   - component: {fileID: 4295852582420136894}
   - component: {fileID: 4295852582420136893}
-  - component: {fileID: 4295852582420136897}
   m_Layer: 6
   m_Name: BathroomDoor
   m_TagString: Interactable
@@ -62873,18 +62859,6 @@ MonoBehaviour:
   IsOpen:
     value: 0
   animatorView: {fileID: 4295852582420136894}
---- !u!114 &4295852582420136897
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4295852582420136892}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e03f9257cc6667f4082439aa77d6f01e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!33 &4657966593860637655
 MeshFilter:
   m_ObjectHideFlags: 0
