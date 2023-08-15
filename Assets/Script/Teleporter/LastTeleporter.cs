@@ -15,7 +15,7 @@ public class LastTeleporter : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (isTriggered || collision.transform == Player.transform) return ;
+        if (isTriggered || !collision.gameObject.CompareTag("Player")) return ;
 
         this.TriggerUI().Forget();
     }
