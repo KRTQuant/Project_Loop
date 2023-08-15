@@ -171,11 +171,18 @@ public class PlayerInteraction : MonoBehaviour
             if(Physics.Raycast(ray, out RaycastHit hit, this.castDistance, this.interactableLayer))
             {
                 var isCorrectTag = hit.collider.gameObject.CompareTag(this.tag);
+                var interactableDoor = hit.collider.gameObject.GetComponent<InteractableDoor>();
 
                 if(isCorrectTag)
                 {
                     this.crosshair.SetActive(true);
                 }
+
+                if(interactableDoor != null && interactableDoor.IsOpen)
+                {
+                    this.crosshair.SetActive(false);
+                }
+
             }
 
             else
