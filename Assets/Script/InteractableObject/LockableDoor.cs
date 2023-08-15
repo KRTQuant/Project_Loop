@@ -15,7 +15,11 @@ public class LockableDoor : InteractableDoor
 
     public override void Interact()
     {
-        if(!isUnlock) return ;
+        if(!isUnlock)
+        {
+            this.audioView.Play("Locked");
+            return ;  
+        }
 
         base.Interact();
     }

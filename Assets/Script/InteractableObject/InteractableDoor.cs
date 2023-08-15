@@ -9,11 +9,14 @@ public class InteractableDoor : MonoBehaviour, IInteractable
     protected ReactiveProperty<bool> IsOpen;
     [SerializeField]
     protected ObjectAnimatorView animatorView;
+    [SerializeField]
+    protected ObjectAudioView audioView;
 
     public virtual void Interact()
     {
         this.IsOpen.Value = !this.IsOpen.Value;
         this.animatorView.SetTrigger("Trigger");
+        this.audioView.Play("Open");
     }
 
     public virtual bool IsInteractable()

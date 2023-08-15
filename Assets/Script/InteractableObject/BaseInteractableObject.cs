@@ -7,10 +7,11 @@ public class BaseInteractableObject : MonoBehaviour, IInteractable
 {
     [SerializeField]
     private string audioName;
-    
+    [SerializeField]
+    private ObjectAudioView audioView;
+
     private bool isYeet = false;
     private bool isAudioPlayed = false;
-    private AudioManager AudioManager => AudioManager.Instance;
 
     public void Interact()
     {
@@ -26,7 +27,7 @@ public class BaseInteractableObject : MonoBehaviour, IInteractable
     {
         if(!this.isYeet || this.isAudioPlayed || this.audioName == "" || this.audioName == null) return;
 
-        this.AudioManager.Play(this.audioName);
+        this.audioView.Play(this.audioName);
         this.isAudioPlayed = true;
     }
 
