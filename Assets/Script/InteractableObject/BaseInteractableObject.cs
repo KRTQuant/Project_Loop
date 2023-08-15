@@ -35,4 +35,9 @@ public class BaseInteractableObject : MonoBehaviour, IInteractable
     {
         this.isYeet = true;
     }
+
+    public void OnPickup()
+    {
+        this.isYeet = false;
+    }
 }
