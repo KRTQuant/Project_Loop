@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 3204229760599793620}
   - component: {fileID: 8328309329609298485}
   - component: {fileID: 7606879922762893599}
+  - component: {fileID: 7970866495667738511}
   m_Layer: 6
   m_Name: KEY 1
   m_TagString: Interactable
@@ -1325,4 +1326,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa8eb6e751918954fa2d73f3b1478be3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioView: {fileID: 7970866495667738511}
   lockableDoor: {fileID: 0}
+--- !u!114 &7970866495667738511
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5942880983710040293}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 651288f05ebb1124db2953ad2bd11ca0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioDataArray:
+  - name: Unlock
+    clip: {fileID: 8300000, guid: 77483babaeebb404b8351c002e40810b, type: 3}
+    source: {fileID: 0}
+    volume: 1
+    pitch: 1
+    isLoop: 0

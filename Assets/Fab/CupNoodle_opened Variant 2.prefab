@@ -1,0 +1,75 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &4929039638562093475
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2505421614819843619, guid: c7f0646e53d0c2c41997da0353a191cd,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 5.525954
+      objectReference: {fileID: 0}
+    - target: {fileID: 2505421614819843619, guid: c7f0646e53d0c2c41997da0353a191cd,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.01999998
+      objectReference: {fileID: 0}
+    - target: {fileID: 2505421614819843619, guid: c7f0646e53d0c2c41997da0353a191cd,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.5389242
+      objectReference: {fileID: 0}
+    - target: {fileID: 2505421614819843619, guid: c7f0646e53d0c2c41997da0353a191cd,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2505421614819843619, guid: c7f0646e53d0c2c41997da0353a191cd,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2505421614819843619, guid: c7f0646e53d0c2c41997da0353a191cd,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2505421614819843619, guid: c7f0646e53d0c2c41997da0353a191cd,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2505421614819843619, guid: c7f0646e53d0c2c41997da0353a191cd,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2505421614819843619, guid: c7f0646e53d0c2c41997da0353a191cd,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2505421614819843619, guid: c7f0646e53d0c2c41997da0353a191cd,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4701172146090368465, guid: c7f0646e53d0c2c41997da0353a191cd,
+        type: 3}
+      propertyPath: m_Name
+      value: CupNoodle_opened Variant 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7848105087036136813, guid: c7f0646e53d0c2c41997da0353a191cd,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 4ac21c6066b120145a6a83ae2fc3a621, type: 2}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c7f0646e53d0c2c41997da0353a191cd, type: 3}

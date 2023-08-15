@@ -66,14 +66,16 @@ public class PlayerCamera : MonoBehaviour
         this.UpdateCameraRotation();
         
 
-        this.ComputeInput();
+        
         this.LerpFOV();
         this.LerpCrouch();
     }
 
+
     private void FixedUpdate()
     {
         this.SyncCameraPos();
+        this.ComputeInput();
     }
 
     private void ComputeInput()

@@ -104,7 +104,7 @@ public class PlayerInteraction : MonoBehaviour
         this.endRotationValue = Quaternion.identity.eulerAngles;
         this.interactElapsedTime = 0;
 
-        this.heldObject.GetComponent<BoxCollider>().enabled = false;
+        this.heldObject.GetComponent<Collider>().enabled = false;
     }
 
     private void ThrowObject()
@@ -122,7 +122,7 @@ public class PlayerInteraction : MonoBehaviour
             baseInteractable.Yeet();
         }
         
-        this.heldObject.GetComponent<BoxCollider>().enabled = true;
+        this.heldObject.GetComponent<Collider>().enabled = true;
         this.heldObject = null;
     }
 
