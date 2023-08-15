@@ -26,6 +26,14 @@ public class AudioManager : MonoSingleton<AudioManager>
     private AudioMixerGroup mixer;
     public void Start()
     {
+        this.Init();
+        this.Play("BGM");
+    }
+
+    public override void Init()
+    {
+        base.Init();
+
         foreach (var audio in this.audioDataArray)
         {
             audio.source = gameObject.AddComponent<AudioSource>();
@@ -35,8 +43,6 @@ public class AudioManager : MonoSingleton<AudioManager>
             audio.source.pitch = audio.pitch;
             audio.source.loop = audio.isLoop;
         }
-
-        this.Play("BGM");
     }
 
     public void Play(string name, bool enableMixer = false)
