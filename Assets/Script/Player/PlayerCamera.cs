@@ -167,6 +167,10 @@ public class PlayerCamera : MonoBehaviour
         var percentage = this.zoomElapsedTime / this.zoomDuration;
 
         this.camera.fieldOfView = Mathf.Lerp(this.beginZoomValue, this.endZoomValue, percentage);
+        if(percentage >= 1)
+        {
+            this.isZooming = false;
+        }
     }
 
     private void LerpCrouch()

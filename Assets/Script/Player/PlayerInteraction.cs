@@ -141,7 +141,6 @@ public class PlayerInteraction : MonoBehaviour
         var posValue = Vector3.Lerp(this.beginLerpPos, this.endLerpPos, percentage);
         var rotValue = Vector3.Lerp(this.beginRotationValue, this.endRotationValue, percentage);
 
-        Debug.Log(posValue);
         this.heldObject.transform.SetPositionAndRotation(posValue, Quaternion.Euler(rotValue));
 
         if(percentage >= 1)

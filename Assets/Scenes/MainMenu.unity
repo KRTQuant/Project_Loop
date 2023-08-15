@@ -256,7 +256,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Contributor : Yaka9, JJAN, KRTQuant[A], AUTHURIA123'
+  m_text: 'Contributor : Yaka9, JJJAN, KRTQuant[A], AUTHURIA123'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -784,7 +784,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 0.5943396, g: 0.5943396, b: 0.5943396, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
@@ -802,7 +802,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 716614072}
+  m_TargetGraphic: {fileID: 1479111693}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
@@ -1399,11 +1399,11 @@ MonoBehaviour:
     pitch: 1
     isLoop: 1
   - name: Unlock
-    clip: {fileID: 8300000, guid: 77483babaeebb404b8351c002e40810b, type: 3}
+    clip: {fileID: 8300000, guid: 30e218c4b3e14e540b09177a4f1255f5, type: 3}
     source: {fileID: 0}
     volume: 1
     pitch: 1
-    isLoop: 1
+    isLoop: 0
   mixer: {fileID: 0}
 --- !u!4 &1372495600
 Transform:
@@ -1616,7 +1616,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 0.59607846, g: 0.59607846, b: 0.59607846, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
@@ -1634,7 +1634,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 1540132933}
+  m_TargetGraphic: {fileID: 154386586}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:

@@ -11,8 +11,6 @@ public class LastTeleporter : MonoBehaviour
     [SerializeField] GameObject overlayUI;
     [SerializeField] int delayTime = 1000;
 
-    private SceneManager sceneManager => SceneManager.Instance;
-
     private void OnCollisionEnter(Collision collision)
     {
         if (isTriggered || !collision.gameObject.CompareTag("Player")) return ;
@@ -25,7 +23,7 @@ public class LastTeleporter : MonoBehaviour
         this.overlayUI.SetActive(true);
         await UniTask.Delay(delayTime);
         this.isTriggered = true;
-        this.sceneManager.LoadScene("MainMenu");
+        UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
     }
 
 }

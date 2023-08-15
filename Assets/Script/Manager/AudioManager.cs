@@ -18,22 +18,31 @@ public class AudioData
     public bool isLoop;
 }
 
-public class AudioManager : MonoSingleton<AudioManager>
+public class AudioManager : MonoBehaviour
 {
     public AudioData[] audioDataArray;
 
+    public static AudioManager Instance;
+
     [SerializeField]
     private AudioMixerGroup mixer;
-    public void Start()
+
+    void Awake()
     {
-        this.Init();
-        this.Play("BGM");
+        if (Instance != null && Instance != this)
+        {
+            Destroy(this);
+        }
+        else
+        {
+            Instance = this;
+        }
+        
+        DontDestroyOnLoad(this.gameObject);
     }
 
-    public override void Init()
-    {
-        base.Init();
-
+    public void Start()
+    {        
         foreach (var audio in this.audioDataArray)
         {
             audio.source = gameObject.AddComponent<AudioSource>();
@@ -43,6 +52,7 @@ public class AudioManager : MonoSingleton<AudioManager>
             audio.source.pitch = audio.pitch;
             audio.source.loop = audio.isLoop;
         }
+        this.Play("BGM");
     }
 
     public void Play(string name, bool enableMixer = false)
